@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    hr{ margin: 30px 0; }
+</style>
+<body>
+
+
+    <script>
+
+        document.write('<hr> <strong>1. </strong><br>')
+
+        for(i=0; i<10; i++ ){
+            document.write(i);
+        }
+
+        document.write('<br>');
+
+        for(i=0; i<10; i++ ){
+            document.write('+');
+        }
+
+
+        document.write('<hr> <strong>2. </strong><br>')
+        
+        for(i=0; i<10; i++ ){
+            document.write(i);
+        }
+        
+        document.write('<br>');
+        
+        for(i=0; i<10; i++){
+            if(i % 2 == 0){
+                document.write('+');
+            } else{
+                document.write('-');
+            }
+        }
+        
+        document.write('<hr> <strong>3. </strong><br>')
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+        }
+        
+        document.write('<br>');
+        
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+            for(j=0; j<10; j++){
+                document.write('-');
+            }
+            document.write('<br>');
+        }
+        
+        document.write('<hr> <strong>4. </strong><br>')
+
+        for(i=0; i<10; i++){
+            document.write(i);
+        }
+
+        document.write('<br>');
+
+        for(i=0; i<10; i++){
+            document.write(i);
+            for(j=0; j<10; j++){
+                if(i==j){
+                    document.write('*');
+                } else{
+                    document.write('-');
+                }
+            };
+            document.write('<br>');
+        }
+
+        document.write('<hr> <strong>5. </strong><br>')
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+        }
+        
+        document.write('<br>');
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+            for(j=0; j<10; j++){
+                if(i+j==9){
+                    document.write('*');
+                } else{
+                    document.write('-');
+                }
+            }
+            document.write('<br>');
+        }
+        
+        document.write('<hr> <strong>6. </strong><br>')
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+        }
+        
+        document.write('<br>');
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+            for(j=0; j<10; j++){
+                if(i==j || i+j ==9){
+                    document.write('*');
+                } else{
+                    document.write('-');
+                }
+            }
+            document.write('<br>');
+        }
+        
+        document.write('<hr> <strong>6. </strong><br>')
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+        }
+        
+        document.write('<br>');
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+            for(j=0; j<10; j++){
+                if(i==0 || i==9 || j==0 || j==9){
+                    document.write('*');
+                } else{
+                    document.write('-');
+                }
+            }
+            document.write('<br>');
+        }
+        
+        document.write('<hr> <strong>7. </strong><br>')
+
+        for(i=0; i<9; i++){
+            document.write(i);
+        }
+        
+        document.write('<br>');
+        
+        for(i=0; i<9; i++){
+            document.write(i);
+            for(j=0; j<9; j++){
+                if(
+                    (i<5 && j<5 && i>=4-j) ||
+                        (i>=5 && j<5 && i<=j+4) ||
+                        (i<5 && j>=5 && i>=j-4) ||
+                            (i>=5 && j>=5 && i<=12-j)
+                            ){
+                                document.write('*');
+                            } else{
+                                document.write('-');
+                }
+            }
+            document.write('<br>');
+        }
+        
+        document.write('<br>');
+        
+        var n = 9;
+        var a = (n-1) / 2;
+        
+        for(i=0; i<10; i++){
+            document.write(i);
+        }
+
+        document.write('<br>');
+        
+        for(i=0; i<n; i++){
+            document.write(i);
+            for(j=0; j<n; j++){
+                if(
+                    (i == a) || 
+                    (j == a) ||
+                    (j-i <= a && i < a && j > a ) || // 우측 상단
+                    (i+j >= a && i < a && j < a ) || // 좌측 상단
+                    (i-j <= a && i > a && j < a ) || // 좌측 하단
+                    (i+j <= a * 3 && i > a && j > a ) // 우측 하단
+                ){
+                    document.write('*');
+                }else{
+                    document.write('-');
+                }
+            }
+            document.write('<br>');
+        }
+
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
