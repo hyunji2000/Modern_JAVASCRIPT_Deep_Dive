@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+
+        *{ margin: 0; padding: 0; box-sizing: border-box; }
+
+        ul{
+            width: 600px;
+            height: 400px;
+            padding: 100px 20px;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            position: absolute; left: 50%; top: 50%;
+            margin-left: -300px; margin-top: -200px;
+            box-shadow: 10px 10px 0 #ddd;
+        }
+
+        li{
+            list-style: none;
+            margin: 15px 50px;
+        }
+
+        label{ display: inline-block; width: 50px; }
+        input{ width: calc(100% - 100px); height: 30px; border: none; }
+        li:last-child input{
+            height: 40px;
+            margin: 50px;
+            background-color: #fff; 
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        #input_login:hover{ background-color: rgb(187, 0, 255); color: #fff; }
+
+
+    </style>
+</head>
+<body>
+
+    <ul class="login">
+        <li>
+            <label for="input_id">ID</label>
+            <input type="text" id="input_id" name="id" placeholder="아이디를 입력하세요!!">
+        </li>
+
+        <li>
+            <label for="input_pw">PW</label>
+            <input type="password" id="input_pw" name="pw" placeholder="비밀번호를 입력하세요!!">
+        </li>
+
+        <li>
+            <input type="button" id="input_login" name="login" value="LOGIN">
+        </li>
+    </ul>
+
+
+    <!-- **************************************************************** -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script>
+
+        var id_success = "admin";
+        var pw_success = "12345";
+
+        function login( id, pw) {
+            if ( id == id_success ) {
+                if ( pw == pw_success ) {
+                    alert("로그인 성공!");
+                    document.getElementById('input_id').value = '';
+                    document.getElementById('input_pw').value = '';
+                } else {
+                    alert("로그인에 실패했습니다. \n비밀번호를 다시 입력하세요.")
+                    document.getElementById('input_pw').value = '';
+                }
+            } else {
+                alert("로그인에 실패했습니다. \n아이디를 다시 입력하세요.")
+                document.getElementById('input_id').value = '';
+                document.getElementById('input_pw').value = '';
+            }
+        }
+
+        $('#input_login').click(function(){
+            var inputId = document.getElementById('input_id').value;
+            var inputPw = document.getElementById('input_pw').value;
+            login(inputId, inputPw);
+        });
+
+
+    </script>
+
+    
+</body>
+</html>
